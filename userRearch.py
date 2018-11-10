@@ -72,7 +72,7 @@ def user_rearch(style,user_list_1):
 
 
 if __name__ == "__main__":
-    db = connect(host="172.16.0.3", port=3306, db="Spider", user="root", passwd="zy79117911#", charset="utf8")
+    db = connect(host="localhost", port=3306, db="Spider", user="root", passwd="123456", charset="utf8")
     conn = db.cursor()
     try:
         sql = 'SELECT userId FROM Media'
