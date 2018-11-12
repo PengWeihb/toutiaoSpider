@@ -6,6 +6,9 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from MySQLdb import *
 
+'''
+使用selenium + PhantomJS的方式，模拟点击不断获取今日头条号主信息
+'''
 def user_rearch(style,user_list_1):
     url = 'https://www.toutiao.com/ch/' + style + '/'
     print(url)
