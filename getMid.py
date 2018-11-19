@@ -6,6 +6,11 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from MySQLdb import *
 
+'''
+https://www.toutiao.com/c/user/51045089537/#mid=51045089537
+今日头条号主主页关键参数mid的获取：主要通过PhantomJS()+selenium模拟点击的方法
+'''
+
 def get_mid(usr_id,d):
 	url = 'https://www.toutiao.com/c/user/' + str(usr_id) + '/'
 
@@ -26,7 +31,6 @@ def get_mid(usr_id,d):
 	d = str(d)
 	Update_mid(data,d)
 	driver.quit()
-
 
 def Update_mid(mid,n):
 	params = [mid,n]
