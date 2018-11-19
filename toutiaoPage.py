@@ -30,7 +30,6 @@ def loadLink(source_url,userId):
         soup = request.urlopen(source_url,timeout=5)
         body = soup.read().decode('utf-8')
         time.sleep(0.1)
-        print(body)
         urllib3.disable_warnings()
     except:
         print('something is wrong!!!')
@@ -71,7 +70,6 @@ def loadLink(source_url,userId):
                 return text
             else:
                 return '[]'
-
         else:
             return '[]'
     else:
