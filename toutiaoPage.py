@@ -8,8 +8,11 @@ import html
 from urllib import request
 import re
 
-def loadLink(source_url,userId):
+'''
+此代码主要是根据已经爬下来的列表详情页，依据文章的URL抓取文章的内容
+'''
 
+def loadLink(source_url,userId):
     proxies = {}
     try:
         proxy_handler = request.ProxyHandler(proxies)
