@@ -4,6 +4,10 @@ import hashlib
 import time
 import math
 
+'''
+头条号主主页历史文章翻页请求参数AS、CP的获取
+'''
+
 def get_ASCP():
     t = int(math.floor(time.time()))
     e = hex(t).upper()[2:]
