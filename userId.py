@@ -3,7 +3,10 @@
 from pymysql import *
 import re
 
-#对之前已经获取的URL，分别提取其userID及其对应的mid
+'''
+对之前已经获取的URL，分别提取其userID及其对应的mid,存入MySQL
+'''
+
 def user_ID():
     db = connect(host="secret", port=3306, db="Spider", user="root", password="secret", charset="utf8")
     cursor = db.cursor()
