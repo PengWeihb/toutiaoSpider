@@ -8,7 +8,9 @@ from MySQLdb import *
 
 '''
 使用selenium + PhantomJS的方式，模拟点击不断获取今日头条号主信息
+此方法主要抓取头条主页活跃的号主，可以分类地进行抓取
 '''
+
 def user_rearch(style,user_list_1):
     url = 'https://www.toutiao.com/ch/' + style + '/'
     print(url)
@@ -95,7 +97,8 @@ if __name__ == "__main__":
     user_list_1 = list(user_set)
     user_list_1.sort(key = user_list.index)
     print len(user_list_1)
-
+    
+    # news_game、news_hot、news_tech、news_entertainment、news_sports、news_car、news_finance、news_travel，and so on.
     style = 'news_game'
     user_rearch(style,user_list_1)
     db.close()
