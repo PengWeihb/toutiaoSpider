@@ -35,3 +35,33 @@ if __name__ == "__main__":
     print(get_ASCP())
     print(get_ASCP()[0])
     print(get_ASCP()[1])
+
+ '''
+ 头条号主主页历史文章翻页请求参数AS、CP的原JS代码
+ i.getHoney = function() {
+	var t=Math.floor((new Date).getTime()/1e3),
+	i=t.toString(16).toUpperCase(),
+	e=md5(t).toString().toUpperCase();
+	if(8!=i.length)
+		return{
+			as:"479BB4B7254C150",
+			cp:"7E0AC8874BB0985"
+		};
+	for(var s=e.slice(0,5),o=e.slice(-5),n="",a=0;5>a;a++)
+		n+=s[a]+i[a];
+	for(var l="",r=0;5>r;r++)
+		l+=i[r+3]+o[r];
+	return{
+		as:"A1"+n+i.slice(-3),
+		cp:i.slice(0,3)+l+"E1"
+	}
+},
+
+function o(){
+	var t,i=ascp.getHoney(),
+	e="";
+	return window.TAC&&(e=TAC.sign(userInfo.id+""+c.params.max_behot_time)),
+	t=_.extend({},c.params,{
+		as:i.as,cp:i.cp,_signature:e})
+}
+ '''
