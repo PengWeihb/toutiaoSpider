@@ -21,9 +21,9 @@ def loadLink(source_url,userId):
         opener.addheaders = [
             ('User-Agent','Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36'),
             #('User-Agent','Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36 TheWorld 7'),
-            #('Cookie', 'tt_webid=6549097213473031687'),
-            #('Referer', accept),
-            #('Host', 'm.toutiao.com')
+            ('Cookie', 'tt_webid=6549097213473031687'),
+            ('Referer', accept),
+            ('Host', 'm.toutiao.com')
         ]
 
         request.install_opener(opener)
@@ -35,7 +35,7 @@ def loadLink(source_url,userId):
     except:
         print('something is wrong!!!')
         error_time = int(time.time())
-        with open('error_url66.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(str(error_time) + '\n')
             e.write(source_url + '\n')
         print(source_url)
