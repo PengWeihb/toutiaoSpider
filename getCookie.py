@@ -3,6 +3,10 @@
 from urllib import request
 import http.cookiejar
 
+'''
+获取服务器返回的cookie
+'''
+
 def get_cookie():
     
     #url = 'https://www.toutiao.com/i6560652557499236877/'
