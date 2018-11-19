@@ -29,7 +29,7 @@ def loadLink(source_url,userId):
         request.install_opener(opener)
         soup = request.urlopen(source_url,timeout=5)
         body = soup.read().decode('utf-8')
-        time.sleep(0.5)
+        time.sleep(0.1)
         print(body)
         urllib3.disable_warnings()
     except:
@@ -107,7 +107,7 @@ if __name__ == "__main__":
         else:
         '''
         if content == '[]':
-            time.sleep(0.5)
+            time.sleep(0.1)
             page = loadLink(url,userId)
             n = id
             n = str(n)
@@ -118,6 +118,6 @@ if __name__ == "__main__":
                 db.commit()
             except:
                 db.rollback()
-            time.sleep(0.5)
+            time.sleep(0.2)
 
     db.close()
