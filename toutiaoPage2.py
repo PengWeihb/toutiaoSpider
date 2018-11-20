@@ -86,16 +86,15 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     try:
-        sql = 'SELECT source_url FROM toutiao10'
+        sql = 'SELECT source_url FROM toutiao'
         MainUrl = cursor.execute(sql)
         data = cursor.fetchall()
         db.commit()
     except:
         db.rollback()
-    for i in range(8375,len(data)):
+        
+    for i in range(len(data)):
         url = data[i][0]
-        print(url)
-        print(i)
         pattern = re.compile(r'\d+')
         user_id = re.findall(pattern,url)
         userId = user_id[0]
@@ -107,7 +106,7 @@ if __name__ == "__main__":
         n = str(n)
         params = [page,n]
         try:
-            sql = """update toutiao10 set article_content=%s WHERE id=%s"""
+            sql = """update toutiao set article_content=%s WHERE id=%s"""
             cursor.execute(sql,params)
             db.commit()
         except:
