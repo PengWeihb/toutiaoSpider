@@ -15,7 +15,6 @@ import random
 '''
 
 def loadLink(source_url,userId):
-
     accept = 'https://www.toutiao.com/i' + userId + '/'
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.90 Safari/537.36 2345Explorer/9.3.2.17331',
@@ -30,13 +29,11 @@ def loadLink(source_url,userId):
         'Cookie': 'uuid="w:bfab8d0a69ca4e989faa722278b8c70f"; UM_distinctid=163252b864a2e1-0d3fc10de-554c162f-1fa400-163252b864b32f; _ga=GA1.2.627472936.1527212834; tt_webid=6549099449222137358; WEATHER_CITY=%E5%8C%97%E4%BA%AC; __tasessionId=lbwjy1jvf1527578479037; tt_webid=6549099449222137358; CNZZDATA1259612802=207427604-1525336204-%7C1527578368'
     }
 
-    #proxies = {"http": "http://60.186.255.172:1246"}
+    proxies = {"http": "http://60.186.255.172:1246"}
     try:
-        body = requests.get(source_url,headers=headers,timeout=5,verify=False).text
+        body = requests.get(source_url,headers=headers,proxies=proxies,timeout=5,verify=False).text
         urllib3.disable_warnings()
         time.sleep(0.1)
-        print(body)
-
 
     except:
         print('something is wrong!!!')
