@@ -34,11 +34,10 @@ def loadLink(source_url,userId):
         body = requests.get(source_url,headers=headers,proxies=proxies,timeout=5,verify=False).text
         urllib3.disable_warnings()
         time.sleep(0.1)
-
     except:
         print('something is wrong!!!')
         error_time = int(time.time())
-        with open('error_url5.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(str(error_time) + '\n')
             e.write(source_url + '\n')
         print(url)
@@ -47,7 +46,6 @@ def loadLink(source_url,userId):
     response = BeautifulSoup(body,'lxml')
     time.sleep(0.1)
     print(response)
-
 
     try:
         content = response.find_all('script')
