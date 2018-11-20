@@ -14,9 +14,9 @@ from HTMLParser import HTMLParser
 def loadLink(url):
     driver = webdriver.PhantomJS()
     driver.get(url)
-    time.sleep(0.5)
+    time.sleep(0.1)
     driver.refresh()
-    driver.implicitly_wait(0.5)
+    driver.implicitly_wait(0.1)
 
     response = BeautifulSoup(driver.page_source, 'lxml')
 
@@ -69,7 +69,7 @@ if __name__ == "__main__":
         print(url)
         print(i)
 
-        time.sleep(0.5)
+        time.sleep(0.1)
         page = loadLink(url)
         n = i + 1
         n = str(n)
@@ -80,6 +80,6 @@ if __name__ == "__main__":
             db.commit()
         except:
             db.rollback()
-        time.sleep(0.5)
+        time.sleep(0.1)
 
     db.close()
