@@ -51,16 +51,17 @@ def loadLink(url):
         return '[]'
 
 if __name__ == "__main__":
-    db = connect(host="172.16.0.3", port=3306, db="Spider", user="root", passwd="zy79117911#", charset="utf8")
+    db = connect(host="secret", port=3306, db="Spider", user="root", passwd="secret", charset="utf8")
     conn = db.cursor()
 
     try:
-        sql = 'SELECT source_url FROM Article5'
+        sql = 'SELECT source_url FROM Article'
         MainUrl = conn.execute(sql)
         data = conn.fetchall()
         db.commit()
     except:
         db.rollback()
+        
     for i in range(2259,len(data)):
         url = data[i][0]
         print(url)
@@ -72,7 +73,7 @@ if __name__ == "__main__":
         n = str(n)
         params = [page,n]
         try:
-            sql = """update Article5 set article_content=%s WHERE id=%s"""
+            sql = """update Article set article_content=%s WHERE id=%s"""
             conn.execute(sql,params)
             db.commit()
         except:
