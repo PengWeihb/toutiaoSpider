@@ -46,7 +46,6 @@ def loadLink(url):
                 return text
             else:
                 return str(content)
-
         else:
             return str(content)
     else:
@@ -64,7 +63,7 @@ if __name__ == "__main__":
     except:
         db.rollback()
         
-    for i in range(2259,len(data)):
+    for i in range(len(data)):
         url = data[i][0]
         print(url)
         print(i)
