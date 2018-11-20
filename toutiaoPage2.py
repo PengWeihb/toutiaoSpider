@@ -10,6 +10,10 @@ import re
 import math
 import random
 
+'''
+使用Python3特有的爬虫库requests爬取今日头条文章内容，且使用IP代理实现批量爬取
+'''
+
 def loadLink(source_url,userId):
 
     accept = 'https://www.toutiao.com/i' + userId + '/'
