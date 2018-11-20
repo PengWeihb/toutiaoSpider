@@ -1,15 +1,17 @@
 # -*- coding:utf-8 -*-
 
 from MySQLdb import *
-import time
 import re
 import time
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from HTMLParser import HTMLParser
 
-def loadLink(url):
+'''
+使用模拟点击(selenium+PhantomJS())的方式,抓取今日头条文章内容
+'''
 
+def loadLink(url):
     driver = webdriver.PhantomJS()
     driver.get(url)
     time.sleep(0.5)
