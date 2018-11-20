@@ -9,7 +9,6 @@ import html
 import re
 import math
 import random
-import re
 
 def loadLink(source_url,userId):
 
@@ -83,7 +82,7 @@ def loadLink(source_url,userId):
         return '[]'
 
 if __name__ == "__main__":
-    db = connect(host="localhost", port=3306, db="spider", user="root", password="123456", charset="utf8")
+    db = connect(host="localhost", port=3306, db="spider", user="root", password="secret", charset="utf8")
     cursor = db.cursor()
 
     try:
