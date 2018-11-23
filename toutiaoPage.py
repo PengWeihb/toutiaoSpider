@@ -95,7 +95,6 @@ if __name__ == "__main__":
         pattern = re.compile(r'\d+')
         user_id = re.findall(pattern, url)
         userId = user_id[0]
-        print(userId)
 
         '''
         if content == '["视频"]':
