@@ -147,8 +147,6 @@ def loadPage4(user_id,mid):
     try:
         body = requests.get(url, headers=headers, verify=False)
         urllib3.disable_warnings()
-        print(body.status_code)
-        print(body.text)
         body = str(body.text)
         body = body[7:-1]
         time.sleep(2.8)
@@ -157,11 +155,11 @@ def loadPage4(user_id,mid):
     except:
         print('something is wrong!!!')
         error_time = int(time.time())
-        with open('error_url42.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time)+'\n')
             e.write(url + '\n')
-        print(url)
+        
         return
 
     for i in range(20):
@@ -169,7 +167,7 @@ def loadPage4(user_id,mid):
         try:
             data2 = data[i]
         except:
-            time.sleep(15)
+            time.sleep(0.1)
             return
         try:
             # 文章链接
@@ -186,7 +184,7 @@ def loadPage4(user_id,mid):
             print(author)
         except:
             error_time = int(time.time())
-            with open('error_url42.txt', 'a') as e:
+            with open('error_url.txt', 'a') as e:
                 e.write(user_id + '\n')
                 e.write(str(i) + '\n')
                 e.write(str(error_time) + '\n')
@@ -298,7 +296,6 @@ def loadPage4(user_id,mid):
 
         time_stamp = datetime.timestamp(date_time)
         time_stamp = int(time_stamp)
-        print(time_stamp)
         t = 1483200000
         if time_stamp < t:
             return
@@ -322,7 +319,7 @@ def loadPage4(user_id,mid):
             'impression_count':impression_count
         }
 
-        sql = """insert into toutiaoPage42(source_url,category,title,author,datetime,keywords,label,total_read_count,internal_visit_count,external_visit_count,comment_count,share_count,impression_count,article_content) \
+        sql = """insert into toutiaoPage(source_url,category,title,author,datetime,keywords,label,total_read_count,internal_visit_count,external_visit_count,comment_count,share_count,impression_count,article_content) \
             values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
         try:
             cursor.execute(sql, (
@@ -346,26 +343,24 @@ def loadPage4(user_id,mid):
         print('something is wrong!!!')
         error_time = int(time.time())
         behot_time = 'behot_time is error'
-        with open('error_url42.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
             e.write(url + '\n')
             e.write(behot_time + '\n')
-        print(url)
         return
 
-    time.sleep(1.8)
+    time.sleep(0.1)
     try:
         loadPage5(max_behot_time,user_id,mid)
     except:
         print('loadPage5 is wrong!!!')
         error_time = int(time.time())
-        with open('error_url42.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
             e.write(str(max_behot_time) + '\n')
             e.write(url + '\n')
-        print(url)
         return
 
 def loadPage5(max_behot_time,user_id,mid):
