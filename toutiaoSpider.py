@@ -12,6 +12,10 @@ from pymysql import *
 import html
 from datetime import datetime
 
+'''
+今日头条号主主页历史文章内容抓取，抓取号主发布的所有内容
+'''
+
 def getASCP():
     t = int(math.floor(time.time()))
     print(t)
