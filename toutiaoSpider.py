@@ -149,7 +149,7 @@ def loadPage4(user_id,mid):
         urllib3.disable_warnings()
         body = str(body.text)
         body = body[7:-1]
-        time.sleep(2.8)
+        time.sleep(0.2)
         soup = json.loads(body)
         data = soup['data']
     except:
@@ -397,7 +397,7 @@ def loadPage5(max_behot_time,user_id,mid):
         return
 
     for i in range(10):
-        time.sleep(0.2)
+        time.sleep(0.1)
         try:
             data2 = data[i]
         except:
@@ -469,7 +469,6 @@ def loadPage5(max_behot_time,user_id,mid):
             print(label)
         except:
             label = '[]'
-            pass
         try:
             # 总阅读数
             total_read_count = data2['total_read_count']
@@ -482,7 +481,6 @@ def loadPage5(max_behot_time,user_id,mid):
                 print(total_read_count)
             except:
                 total_read_count = 0
-            pass
         try:
             # 应用外阅读数
             external_visit_count = data2['external_visit_count']
@@ -490,7 +488,6 @@ def loadPage5(max_behot_time,user_id,mid):
             print(external_visit_count)
         except:
             external_visit_count = 0
-            pass
         try:
             # 应用内阅读数
             internal_visit_count = data2['internal_visit_count']
@@ -502,7 +499,6 @@ def loadPage5(max_behot_time,user_id,mid):
                 print(internal_visit_count)
             except:
                 internal_visit_count = 0
-            pass
         try:
             # 评论数
             comment_count = data2['comment_count']
@@ -510,7 +506,6 @@ def loadPage5(max_behot_time,user_id,mid):
             print(comment_count)
         except:
             comment_count = 0
-            pass
         try:
             # 转发数
             share_count = data2['share_count']
