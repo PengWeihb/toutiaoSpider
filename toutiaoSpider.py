@@ -18,7 +18,6 @@ from datetime import datetime
 
 def getASCP():
     t = int(math.floor(time.time()))
-    print(t)
     e = hex(t).upper()[2:]
     m = hashlib.md5()
     m.update(str(t).encode(encoding='utf-8'))
@@ -57,18 +56,16 @@ def loadPage1(user_id,mid):
     except:
         pass
     urllib3.disable_warnings()
-    print(body.status_code)
-
+   
     try:
         loadPage2(user_id,mid)
     except:
         print('loadPage2 is wrong!!!')
         error_time = int(time.time())
-        with open('error_url42.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
             e.write(url + '\n')
-        print(url)
         return
 
 def loadPage2(user_id,mid):
@@ -87,7 +84,6 @@ def loadPage2(user_id,mid):
         body = requests.get(url, headers=headers, verify=False)
     except:
         pass
-    print(body.status_code)
     urllib3.disable_warnings()
 
     try:
@@ -95,11 +91,11 @@ def loadPage2(user_id,mid):
     except:
         print('loadPage3 is wrong!!!')
         error_time = int(time.time())
-        with open('error_url42.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
             e.write(url + '\n')
-        print(url)
+       
         return
 
 def loadPage3(user_id,mid):
@@ -118,7 +114,7 @@ def loadPage3(user_id,mid):
         body = requests.get(url, headers=headers, verify=False)
     except:
         pass
-    print(body.status_code)
+    
     urllib3.disable_warnings()
     time.sleep(0.1)
 
@@ -127,11 +123,11 @@ def loadPage3(user_id,mid):
     except:
         print('loadPage4 is wrong!!!')
         error_time = int(time.time())
-        with open('error_url42.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
             e.write(url + '\n')
-        print(url)
+  
         return
 
 def loadPage4(user_id,mid):
