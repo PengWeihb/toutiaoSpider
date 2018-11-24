@@ -931,11 +931,11 @@ def loadLink(source_url):
         return '[]'
 
 if __name__ == "__main__":
-    db = connect(host="192.168.1.106", port=3306, db="Spider", user="root", passwd="zy79117911#", charset="utf8")
+    db = connect(host="secret", port=3306, db="Spider", user="root", passwd="secret", charset="utf8")
     cursor = db.cursor()
 
     try:
-        sql = 'SELECT userId,mid FROM User42'
+        sql = 'SELECT userId,mid FROM User'
         MainUrl = cursor.execute(sql)
         data = cursor.fetchall()
         db.commit()
@@ -946,6 +946,6 @@ if __name__ == "__main__":
         user_id = data[i][0]
         mid = data[i][1]
         loadPage1(user_id, mid)
-        time.sleep(3)
+        time.sleep(0.1)
 
     db.close()
