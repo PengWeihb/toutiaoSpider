@@ -285,7 +285,7 @@ def loadPage4(user_id,mid):
 
         time_stamp = datetime.timestamp(date_time)
         time_stamp = int(time_stamp)
-        t = 1483200000
+        t = 1483200000 #2017-01-01
         if time_stamp < t:
             return
         else:
@@ -509,7 +509,7 @@ def loadPage5(max_behot_time,user_id,mid):
 
         time_stamp = datetime.timestamp(date_time)
         time_stamp = int(time_stamp)
-        t = 1483200000
+        t = 1483200000 #2017-01-01
         if time_stamp < t:
             return
         else:
@@ -741,7 +741,7 @@ def loadPage(max_behot_time,i,user_id,mid):
 
         time_stamp = datetime.timestamp(date_time)
         time_stamp = int(time_stamp)
-        t = 1483200000
+        t = 1483200000  #2017-01-01
         if time_stamp < t:
             return
         else:
