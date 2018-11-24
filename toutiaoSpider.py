@@ -13,7 +13,7 @@ import html
 from datetime import datetime
 
 '''
-今日头条号主主页历史文章内容抓取，抓取号主发布的所有内容
+今日头条号主主页历史文章内容抓取，抓取号主发布的所有内容、以及阅读数、评论数、推荐数、文章标签等信息
 '''
 
 def getASCP():
