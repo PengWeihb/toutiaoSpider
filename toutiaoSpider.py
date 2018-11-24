@@ -871,10 +871,9 @@ def loadLink(source_url):
     except:
         print('something is wrong!!!')
         error_time = int(time.time())
-        with open('error_url42.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(str(error_time) + '\n')
             e.write(source_url + '\n')
-        print(source_url)
         return
 
     response = BeautifulSoup(body,'lxml')
@@ -902,7 +901,6 @@ def loadLink(source_url):
                 text = content.replace('div&gt;&lt;','').replace('&lt;/div&gt;','')
                 text = html.unescape(text)
                 text = str(text)
-                print(text)
                 return text
             else:
                 return '[]'
