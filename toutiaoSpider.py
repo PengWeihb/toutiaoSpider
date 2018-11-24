@@ -94,8 +94,7 @@ def loadPage2(user_id,mid):
         with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
-            e.write(url + '\n')
-       
+            e.write(url + '\n')    
         return
 
 def loadPage3(user_id,mid):
@@ -127,7 +126,6 @@ def loadPage3(user_id,mid):
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
             e.write(url + '\n')
-  
         return
 
 def loadPage4(user_id,mid):
@@ -158,8 +156,7 @@ def loadPage4(user_id,mid):
         with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time)+'\n')
-            e.write(url + '\n')
-        
+            e.write(url + '\n') 
         return
 
     for i in range(20):
@@ -227,7 +224,6 @@ def loadPage4(user_id,mid):
             print(keywords)
         except:
             keywords = '[]'
-            pass
         try:
             # 标签
             label = data2['label']
@@ -235,7 +231,6 @@ def loadPage4(user_id,mid):
             print(label)
         except:
             label = '[]'
-            pass
         try:
             #总阅读数
             total_read_count = data2['total_read_count']
@@ -248,7 +243,6 @@ def loadPage4(user_id,mid):
                 print(total_read_count)
             except:
                 total_read_count = 0
-            pass
         try:
             #应用外阅读数
             external_visit_count = data2['external_visit_count']
@@ -256,7 +250,6 @@ def loadPage4(user_id,mid):
             print(external_visit_count)
         except:
             external_visit_count = 0
-            pass
         try:
             # 应用内阅读数
             internal_visit_count = data2['internal_visit_count']
@@ -268,7 +261,6 @@ def loadPage4(user_id,mid):
                 print(internal_visit_count)
             except:
                 internal_visit_count = 0
-            pass
         try:
             #评论数
             comment_count = data2['comment_count']
@@ -276,7 +268,6 @@ def loadPage4(user_id,mid):
             print(comment_count)
         except:
             comment_count = 0
-            pass
         try:
             #转发数
             share_count = data2['share_count']
@@ -284,7 +275,6 @@ def loadPage4(user_id,mid):
             print(share_count)
         except:
             share_count = 0
-            pass
         try:
             #推荐数
             impression_count = data2['impression_count']
@@ -292,7 +282,6 @@ def loadPage4(user_id,mid):
             print(impression_count)
         except:
             impression_count = 0
-            pass
 
         time_stamp = datetime.timestamp(date_time)
         time_stamp = int(time_stamp)
@@ -337,7 +326,6 @@ def loadPage4(user_id,mid):
 
     try:
         behot = soup['next']
-        print(behot)
         max_behot_time = behot['max_behot_time']
     except:
         print('something is wrong!!!')
@@ -393,7 +381,6 @@ def loadPage5(max_behot_time,user_id,mid):
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
             e.write(url + '\n')
-       
         return
 
     for i in range(10):
@@ -461,7 +448,6 @@ def loadPage5(max_behot_time,user_id,mid):
             print(keywords)
         except:
             keywords = '[]'
-            pass
         try:
             # 标签
             label = data2['label']
@@ -513,7 +499,6 @@ def loadPage5(max_behot_time,user_id,mid):
             print(share_count)
         except:
             share_count = 0
-            pass
         try:
             # 推荐数
             impression_count = data2['impression_count']
@@ -521,7 +506,6 @@ def loadPage5(max_behot_time,user_id,mid):
             print(impression_count)
         except:
             impression_count = 0
-            pass
 
         time_stamp = datetime.timestamp(date_time)
         time_stamp = int(time_stamp)
@@ -569,9 +553,7 @@ def loadPage5(max_behot_time,user_id,mid):
 
     try:
         behot = soup['next']
-        print(behot)
         max_behot_time = behot['max_behot_time']
-        print(max_behot_time)
     except:
         print('something is wrong!!!')
         error_time = int(time.time())
@@ -698,7 +680,6 @@ def loadPage(max_behot_time,i,user_id,mid):
             print(keywords)
         except:
             keywords = '[]'
-            pass
         try:
             # 标签
             label = data2['label']
@@ -706,7 +687,6 @@ def loadPage(max_behot_time,i,user_id,mid):
             print(label)
         except:
             label = '[]'
-            pass
         try:
             # 总阅读数
             total_read_count = data2['total_read_count']
@@ -719,7 +699,6 @@ def loadPage(max_behot_time,i,user_id,mid):
                 print(total_read_count)
             except:
                 total_read_count = 0
-            pass
         try:
             # 应用外阅读数
             external_visit_count = data2['external_visit_count']
@@ -727,7 +706,6 @@ def loadPage(max_behot_time,i,user_id,mid):
             print(external_visit_count)
         except:
             external_visit_count = 0
-            pass
         try:
             # 应用内阅读数
             internal_visit_count = data2['internal_visit_count']
@@ -739,7 +717,6 @@ def loadPage(max_behot_time,i,user_id,mid):
                 print(internal_visit_count)
             except:
                 internal_visit_count = 0
-            pass
         try:
             # 评论数
             comment_count = data2['comment_count']
@@ -747,7 +724,6 @@ def loadPage(max_behot_time,i,user_id,mid):
             print(comment_count)
         except:
             comment_count = 0
-            pass
         try:
             # 转发数
             share_count = data2['share_count']
@@ -755,7 +731,6 @@ def loadPage(max_behot_time,i,user_id,mid):
             print(share_count)
         except:
             share_count = 0
-            pass
         try:
             # 推荐数
             impression_count = data2['impression_count']
@@ -763,7 +738,6 @@ def loadPage(max_behot_time,i,user_id,mid):
             print(impression_count)
         except:
             impression_count = 0
-            pass
 
         time_stamp = datetime.timestamp(date_time)
         time_stamp = int(time_stamp)
