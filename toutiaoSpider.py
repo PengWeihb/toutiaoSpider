@@ -618,13 +618,11 @@ def loadPage(max_behot_time,i,user_id,mid):
     url = 'https://www.toutiao.com/pgc/ma/?page_type=1&max_behot_time=' + str(
         max_behot_time) + '&uid=' + str(user_id) + '&media_id=' + str(mid) + '&output=json&is_json=1&count=10&from=user_profile_app&version=2&as=' + \
           ascp[0] + '&cp=' + ascp[1] + '5AEF4BD2B2F4FE1&callback=jsonp' + str(i)
-    print(url)
     try:
         body = requests.get(url, headers=headers, verify=False)
         urllib3.disable_warnings()
-        print(body.status_code)
         body = str(body.text)
-        time.sleep(2.7)
+        time.sleep(0.1)
         if i>=6 and i<=9:
             body = body[7:-1]
         else:
@@ -635,15 +633,14 @@ def loadPage(max_behot_time,i,user_id,mid):
     except:
         print('something is wrong!!!')
         error_time = int(time.time())
-        with open('error_url42.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
             e.write(url + '\n')
-        print(url)
         return
 
     for i in range(10):
-        time.sleep(0.2)
+        time.sleep(0.1)
         try:
             data2 = data[i]
         except:
@@ -663,7 +660,7 @@ def loadPage(max_behot_time,i,user_id,mid):
             print(author)
         except:
             error_time = int(time.time())
-            with open('error_url42.txt', 'a') as e:
+            with open('error_url.txt', 'a') as e:
                 e.write(user_id + '\n')
                 e.write(str(i) + '\n')
                 e.write(str(error_time) + '\n')
@@ -775,7 +772,6 @@ def loadPage(max_behot_time,i,user_id,mid):
 
         time_stamp = datetime.timestamp(date_time)
         time_stamp = int(time_stamp)
-        print(time_stamp)
         t = 1483200000
         if time_stamp < t:
             return
@@ -799,7 +795,7 @@ def loadPage(max_behot_time,i,user_id,mid):
             'impression_count': impression_count
         }
 
-        sql = """insert into toutiaoPage42(source_url,category,title,author,datetime,keywords,label,total_read_count,internal_visit_count,external_visit_count,comment_count,share_count,impression_count,article_content) \
+        sql = """insert into toutiaoPage(source_url,category,title,author,datetime,keywords,label,total_read_count,internal_visit_count,external_visit_count,comment_count,share_count,impression_count,article_content) \
             values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
         try:
             cursor.execute(sql, (
@@ -814,19 +810,16 @@ def loadPage(max_behot_time,i,user_id,mid):
 
     try:
         behot = soup['next']
-        print(behot)
         max_behot_time = behot['max_behot_time']
-        print(max_behot_time)
     except:
         print('something is wrong!!!')
         error_time = int(time.time())
         behot_time = 'behot_time is error'
-        with open('error_url42.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
             e.write(url + '\n')
             e.write(behot_time + '\n')
-        print(url)
         return
 
     try:
@@ -836,19 +829,18 @@ def loadPage(max_behot_time,i,user_id,mid):
             if i >= 10:
                 i = 10
             else:
-                time.sleep(5)
+                time.sleep(0.2)
             try:
-                time.sleep(1.5)
+                time.sleep(0.2)
                 loadPage(max_behot_time,i,user_id,mid)
             except:
                 print('loadPage is wrong!!!')
                 error_time = int(time.time())
-                with open('error_url42.txt', 'a') as e:
+                with open('error_url.txt', 'a') as e:
                     e.write(user_id + '\n')
                     e.write(str(error_time) + '\n')
                     e.write(str(i) + '\n')
                     e.write(str(max_behot_time) + '\n')
-                print(url)
                 return
         else:
             return
@@ -856,12 +848,11 @@ def loadPage(max_behot_time,i,user_id,mid):
         print('something is wrong!!!')
         error_time = int(time.time())
         has_more = 'has_more is error'
-        with open('error_url42.txt', 'a') as e:
+        with open('error_url.txt', 'a') as e:
             e.write(user_id + '\n')
             e.write(str(error_time) + '\n')
             e.write(url + '\n')
             e.write(has_more + '\n')
-        print(url)
         return
 
 def loadLink(source_url):
