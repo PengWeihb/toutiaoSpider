@@ -27,7 +27,7 @@ import pymongo
 
 class Title(object):
     def __init__(self):
-        self.mongoUri = 'mongodb://mongouser:zy79117911#@172.16.0.10/admin'
+        self.mongoUri = 'mongodb://mongouser:password@ip/admin'
         self.client = pymongo.MongoClient(self.mongoUri)
 
         self.db = self.client.TouTiao
@@ -36,7 +36,7 @@ class Title(object):
         self.url = 'https://is.snssdk.com/pgc/ma/?article_limit_enable=1&max_behot_time={}&user_id={}&media_id={}&as={}&cp={}&current_user_id=0&from_page=detail_article&is_blocked=0&is_following=0&is_default_tab=1&current_type=all&version_code=6.8.0&page_type=1&count=20&output=json&is_json=1&from=user_profile_app&version=2'  # 5AEF4BD2B2F4FE1
         self.n = 0
         # 链接redis
-        self.redis_cli = redis.Redis(host="111.230.136.142", port=6480, db=1, password="zy79117911#",decode_responses=True)
+        self.redis_cli = redis.Redis(host='secret', port=6480, db=1, password="password",decode_responses=True)
         self.start_time = int(time.time())
         self.end_time = 1537459200  # 9-20-0
         self.next_over_time = 0
