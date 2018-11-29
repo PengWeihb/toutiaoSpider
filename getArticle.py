@@ -293,6 +293,7 @@ class title(object):
             mid = data['mid']
             # 本次访问的断点
             self.end_time =data['next_time']
+            
             try:
                 self.get_response(uid,mid,now)
                 data1 = {}
