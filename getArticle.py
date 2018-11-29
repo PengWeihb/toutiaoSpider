@@ -123,13 +123,9 @@ class title(object):
         now1 = 0
 
         for data2 in data:
-
             title = data2['title']
-
             url = data2['source_url']
-
             create = data2['datetime']
-
             author = data2['source']
             # 关键字
             try:
@@ -263,7 +259,6 @@ class title(object):
                 return
         else:
             self.start_request(uid, mid, now1)
-
 
     def get_content(self,articleID):
         print(articleID)
