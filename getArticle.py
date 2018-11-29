@@ -119,7 +119,6 @@ class title(object):
 
     def parse(self,data,uid,mid):
         now1 = 0
-
         for data2 in data:
             title = data2['title']
             url = data2['source_url']
@@ -209,7 +208,7 @@ class title(object):
 
             except:
                 content = self.get_content(articleID)
-                print(66666666)
+                print('66666666')
 
             now = int(time.time())
             item = {
