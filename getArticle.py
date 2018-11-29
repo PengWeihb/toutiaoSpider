@@ -196,6 +196,7 @@ class title(object):
             print('评论数：', comment)
             print('分享数：', share_count)
             print('推荐量：', impression)
+            
             pattern = re.compile(r'\d+')
             articleID = re.findall(pattern, url)[0]
             try:
