@@ -181,6 +181,7 @@ class title(object):
                 optional_data = data2['optional_data']['label3']
             except:
                 optional_data = '[]'
+                
             print('标题：', title)
             print('文章路径：', url)
             print('作者：', author)
