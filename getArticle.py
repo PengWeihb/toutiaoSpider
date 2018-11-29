@@ -8,7 +8,6 @@ import re
 import time
 from threading import Thread
 from urllib.parse import urlencode
-
 import requests
 # from get_ascp import getASCP
 from bs4 import BeautifulSoup
@@ -21,12 +20,12 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)  # 禁用安全请求警告
 import pymongo
 
-class Title(object):
+class title(object):
     def __init__(self):
         self.mongoUri = 'mongodb://mongouser:password@ip/admin'
         self.client = pymongo.MongoClient(self.mongoUri)
 
-        self.db = self.client.TouTiao
+        self.db = self.client.touTiao
 
         self.collection = self.db.toutiaoIncrement
         self.url = 'https://is.snssdk.com/pgc/ma/?article_limit_enable=1&max_behot_time={}&user_id={}&media_id={}&as={}&cp={}&current_user_id=0&from_page=detail_article&is_blocked=0&is_following=0&is_default_tab=1&current_type=all&version_code=6.8.0&page_type=1&count=20&output=json&is_json=1&from=user_profile_app&version=2'  # 5AEF4BD2B2F4FE1
@@ -62,7 +61,6 @@ class Title(object):
         return AS, CP
 
     def get_response(self, uid, mid, max_behot_time):
-
         AS, CP = self.getASCP()
         uid = int(uid)
         media_dia = int(mid)
@@ -314,6 +312,6 @@ class Title(object):
 
 if __name__=="__main__":
     for i in range(5):
-        c = Title()
+        c = title()
         work_thead2 = Thread(target=c.run)
         work_thead2.start()
