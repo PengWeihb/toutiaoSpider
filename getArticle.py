@@ -51,6 +51,7 @@ class title(object):
         a = i[-5:]
         s = ''
         r = ''
+        
         for o in range(5):
             s += n[o] + e[o]
             r += e[o + 3] + a[o]
