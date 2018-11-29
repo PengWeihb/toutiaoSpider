@@ -20,6 +20,10 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)  # 禁用安全请求警告
 import pymongo
 
+'''
+今日头条文章内容抓取，主要为监控7天内文章的阅读数、评论数、转发数等的变化
+'''
+
 class title(object):
     def __init__(self):
         self.mongoUri = 'mongodb://mongouser:password@ip/admin'
