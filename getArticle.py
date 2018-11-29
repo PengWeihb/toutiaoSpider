@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
-# -*- coding:utf-8 -*-
-# coding:utf-8
+
 import hashlib
 import math
 import random
@@ -22,9 +21,6 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)  # 禁用安全请求警告
 import pymongo
 
-
-
-
 class Title(object):
     def __init__(self):
         self.mongoUri = 'mongodb://mongouser:password@ip/admin'
@@ -42,7 +38,6 @@ class Title(object):
         self.next_over_time = 0
         self.max_behot_time = 0
         self.count = 0
-
 
     def getASCP(self):
         t = int(math.floor(time.time()))
@@ -318,11 +313,7 @@ class Title(object):
                 continue
 
 if __name__=="__main__":
-    # c=Title()
-    # c.run()
     for i in range(5):
         c = Title()
         work_thead2 = Thread(target=c.run)
         work_thead2.start()
-
-
