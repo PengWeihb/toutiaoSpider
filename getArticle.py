@@ -242,7 +242,7 @@ class title(object):
                 rsp = i['source_url']
                 print("------》》》》》》",rsp)
             if rsp:
-                print(11111111)
+                print('11111111')
                 self.collection.update({"source_url":url},{"$push":{"update_time":now,"read_collection":totalRead,"comment_collection":comment,"impression_collection":impression}})
             else:
                 print("你好——————")
@@ -275,7 +275,6 @@ class title(object):
                 content = str(soup.select("article")[0])
         except:
             content = '[]'
-        print(content,'\n')
         return content
 
     def run(self):
