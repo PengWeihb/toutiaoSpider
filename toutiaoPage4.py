@@ -14,16 +14,7 @@ sys.getdefaultencoding()
 def loadLink(source_url):
     ua = UserAgent()
     headers = {
-        #'User-Agent':ua.random,
-        'Host': 'm.ce.cn',
-        'Connection': 'keep-alive',
-        'Cache-Control': 'max-age=0',
-        'Upgrade-Insecure-Requests': '1',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-        'Accept-Encoding': 'gzip, deflate',
-        'Accept-Language': 'zh-CN,zh;q=0.9',
-        'Cookie': 'wdcid=17845dda0f992773; _ga=GA1.3.1525765210.1543726895; wdses=7d7a7041a21fa181; __tasessionId=p0dafeh901543828064293; _gid=GA1.3.571101673.1543828065; wdlast=1543828625'
+        'User-Agent':ua.random,
     }
 
     body = requests.get(source_url, headers=headers, timeout=5).text
