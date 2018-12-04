@@ -124,7 +124,7 @@ def loadLink4(source_url):
     return soup2
 
 if __name__ == "__main__":
-    db = connect(host="localhost", port=3306, db="Spider", user="root", password="123456", charset="utf8")
+    db = connect(host="localhost", port=3306, db="Spider", user="root", password="secret", charset="utf8")
     cursor = db.cursor()
 
     try:
