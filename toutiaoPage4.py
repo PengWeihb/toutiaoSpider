@@ -49,15 +49,11 @@ def loadLink2(source_url):
     body = requests.get(source_url, headers=headers, timeout=5).text
     urllib3.disable_warnings()
     time.sleep(0.01)
-    print(body)
-
+   
     response = BeautifulSoup(body, 'lxml')
     time.sleep(0.01)
 
     soup = response.find_all('article')
-    #soup = response.find_all('figure')
-    #return str(soup)
-
     try:
         soup = soup[0]
     except:
