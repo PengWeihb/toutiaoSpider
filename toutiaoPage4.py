@@ -98,18 +98,14 @@ def loadLink4(source_url):
     body = requests.get(source_url, headers=headers, timeout=5).text
     urllib3.disable_warnings()
     time.sleep(0.1)
-    # print(body)
 
     soup = body.encode('raw_unicode_escape')
     soup = soup.decode()
-    # print(soup)
 
     response = BeautifulSoup(soup, 'lxml')
     time.sleep(0.01)
-    # print(response)
 
     soup2 = response.find_all('article')
-    #print(soup2)
 
     try:
         soup2 = soup2[0]
