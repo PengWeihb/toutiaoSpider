@@ -130,12 +130,10 @@ if __name__ == "__main__":
 
     for i in range(len(data)):
         url = data[i][0]
-        #print(url)
         id = data[i][1]
         content = data[i][2]
 
         if content == '[]':
-        #if content != '1':
             page = loadLink2(url)
             #time.sleep(10000)
             n = id
