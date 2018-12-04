@@ -128,7 +128,7 @@ if __name__ == "__main__":
     except:
         db.rollback()
 
-    for i in range(20694,21125):
+    for i in range(len(data)):
         url = data[i][0]
         #print(url)
         id = data[i][1]
