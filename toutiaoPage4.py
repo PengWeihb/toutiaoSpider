@@ -24,6 +24,7 @@ def loadLink(source_url):
     urllib3.disable_warnings()
     time.sleep(0.01)
 
+    #中文乱码处理
     soup = body.encode('raw_unicode_escape')
     soup = soup.decode()
 
@@ -33,8 +34,7 @@ def loadLink(source_url):
     soup2 = response.find_all('article')
     soup2 = soup2[0]
     soup2 = str(soup2)
-    soup2 = soup2[9:-10]
-    soup2 = soup2.strip()
+    soup2 = soup2[9:-10].strip()
     print(soup2)
 
     return soup2
