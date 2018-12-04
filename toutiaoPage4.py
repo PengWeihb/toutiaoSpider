@@ -7,8 +7,11 @@ from bs4 import BeautifulSoup
 from pymysql import *
 import sys
 from fake_useragent import UserAgent
-
 sys.getdefaultencoding()
+
+'''
+今日头条文章内容抓取，主要抓取的是中国经济网、华尔街见闻、人民网、海外网、环球网、#经济日报、观察者网等网站文章内容
+'''
 
 #中国经济网
 def loadLink(source_url):
