@@ -73,13 +73,11 @@ def loadLink3(source_url):
     body = requests.get(source_url, headers=headers, timeout=5).text
     urllib3.disable_warnings()
     time.sleep(0.01)
-    #print(body)
 
     response = BeautifulSoup(body, 'lxml')
     time.sleep(0.01)
 
     soup = response.find_all('div',{'class':'a-con'})
-    #print(soup)
 
     try:
         soup = soup[0]
