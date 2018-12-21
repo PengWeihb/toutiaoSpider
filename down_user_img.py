@@ -98,7 +98,7 @@ def oss(subpath, url, headers=None, filename=False):
     return 'http://%s.%s/%s' % (bucket_name, endpoint, imgfile, )
 
 if __name__ == '__main__':
-    db = connect(host='192.168.0.1', port=3306, db='spider', user='root', password='secret',charset='utf8')
+    db = connect(host='localhost', port=3306, db='spider', user='root', password='secret',charset='utf8')
     cursor = db.cursor()
     try:
         sql = """select id,uid,logo,flag from toutiao_image"""
