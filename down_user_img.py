@@ -108,7 +108,6 @@ def conn_sql():
 
     for i in range(len(data)):
         id = data[i][0]
-        print(id)
         flag = data[i][3]
         mlogostart = 'https://gghg3DAS'
         mlogo = data[i][2]
