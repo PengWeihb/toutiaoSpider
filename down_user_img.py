@@ -44,7 +44,7 @@ def download_img(url, root_path='/tmp/img/', headers=None):
             if url[0:2]=='//':
                 url = 'https:'+url
             url = url.replace('\\','')
-            r = requests.get(url, headers=headers, stream=True, timeout=30000)
+            r = requests.get(url, headers=headers, stream=True, timeout=3)
             time.sleep(0.2)
             filename = md5(url.split('/')[-1])
             img_ext = r.headers['Content-Type'].split('/')[1]
@@ -92,7 +92,7 @@ def oss(subpath, url, headers=None, filename=False):
     bucket_name = oss_config.get('bucket_name')
     ossid = oss_config.get('')
     auth = oss2.Auth(accesskeyid, accesskey)
-    timeout = 30000
+    timeout = 3
     bucket = oss2.Bucket(auth, 'http://%s' % (endpoint,), bucket_name, connect_timeout=timeout)
     bucket.put_object_from_file(imgfile, img_path)
     return 'http://%s.%s/%s' % (bucket_name, endpoint, imgfile, )
