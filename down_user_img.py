@@ -123,7 +123,6 @@ def conn_sql():
                     sql = """update toutiao_image set logo = %s where id = %s"""
                     cursor.execute(sql, param)
                     db.commit()
-                    print('ok!!!!!')
                 except:
                     db.rollback()
 
