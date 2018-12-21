@@ -97,9 +97,7 @@ def oss(subpath, url, headers=None, filename=False):
     bucket.put_object_from_file(imgfile, img_path)
     return 'http://%s.%s/%s' % (bucket_name, endpoint, imgfile, )
 
-if __name__ == '__main__':
-    db = connect(host='localhost', port=3306, db='spider', user='root', password='secret',charset='utf8')
-    cursor = db.cursor()
+def conn_sql():
     try:
         sql = """select id,uid,logo,flag from toutiao_image"""
         cursor.execute(sql)
@@ -130,4 +128,8 @@ if __name__ == '__main__':
                 except:
                     db.rollback()
 
+if __name__ == '__main__':
+    db = connect(host='localhost', port=3306, db='spider', user='root', password='secret',charset='utf8')
+    cursor = db.cursor()
+    conn_sql()
     db.close()
