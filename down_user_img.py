@@ -11,6 +11,10 @@ import hashlib
 import os
 import oss2
 
+'''
+今日头条用户头像图片下载
+'''
+
 def md5(val):
     if type(val)!=bytes:
         val = val.encode('utf-8')
