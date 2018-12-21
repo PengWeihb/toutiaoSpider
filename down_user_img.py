@@ -76,10 +76,10 @@ def oss(subpath, url, headers=None, filename=False):
         imgfile = '%s/%s.%s' % (subpath, md5(url), ext)
 
     oss_config = {
-        'accesskeyid': 'LTAIEPRqnvBJJJPQ',
-        'accesskey': '5Er6f2BsOMD6j3ePmBtyuTATdIT3e0',
-        'endpoint': 'oss-cn-shenzhen.aliyuncs.com',
-        'bucket_name': 'jjlmobile',
+        'accesskeyid': 'fhgfdsgsg',
+        'accesskey': '35757587fhdfhjdh',
+        'endpoint': 'oss-cn-guangzhou.aliyuncs.com',
+        'bucket_name': 'hdfdwa',
     }
 
     accesskeyid = oss_config.get('accesskeyid')
@@ -94,21 +94,21 @@ def oss(subpath, url, headers=None, filename=False):
     return 'http://%s.%s/%s' % (bucket_name, endpoint, imgfile, )
 
 if __name__ == '__main__':
-    db = connect(host='192.168.0.21', port=3306, db='db_juejinlian', user='user_juejinlian', password='ac21acWq18E2',charset='utf8')
+    db = connect(host='192.168.0.1', port=3306, db='spider', user='root', password='secret',charset='utf8')
     cursor = db.cursor()
     try:
-        sql = """select id,openid,logo,flag from jjb_media"""
+        sql = """select id,uid,logo,flag from toutiao_image"""
         cursor.execute(sql)
         data = cursor.fetchall()
         db.commit()
     except:
         db.rollback()
 
-    for i in range(31210,len(data)):
+    for i in range(len(data)):
         id = data[i][0]
         print(id)
         flag = data[i][3]
-        mlogostart = 'https://jjlmobile.oss-cn-shenzhen.aliyuncs.com/media_avatar'
+        mlogostart = 'https://gghg3DAS'
         mlogo = data[i][2]
         if flag == '今日头条':
             if not mlogo.startswith(mlogostart, 0, 59):
@@ -119,7 +119,7 @@ if __name__ == '__main__':
 
                 param = [mlogo, id]
                 try:
-                    sql = """update jjb_media set logo = %s where id = %s"""
+                    sql = """update toutiao_image set logo = %s where id = %s"""
                     cursor.execute(sql, param)
                     db.commit()
                     print('ok!!!!!')
