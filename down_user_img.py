@@ -73,7 +73,7 @@ def oss(subpath, url, headers=None, filename=False):
         (img_path, ext) = download_img(url, headers=headers)
     else:
         (img_path, ext) = (url, os.path.splitext(url)[1][1:])
-    # print(ext, img_path)
+        
     if filename:
         imgfile = '%s/%s.%s' % (subpath, str(filename), ext)
     else:
