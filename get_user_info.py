@@ -7,12 +7,15 @@ from fake_useragent import UserAgent
 from pymysql import *
 import time
 
+'''
+今日头条号主description信息抓取
+'''
+
 def get_content(openid):
     ua = UserAgent()
     url = 'http://m.toutiao.com/profile/' + str(openid) + '/'
     headers = {
         'User-Agent': ua.random,
-        #'cookie': 'tt_webid=6633177721172510211; WEATHER_CITY=%E5%8C%97%E4%BA%AC; UM_distinctid=16795d64deb4d2-06cf1e2bb36f16-3a3a5d0c-1fa400-16795d64dec651; tt_webid=6633177721172510211; csrftoken=e4399435db5073524703dd9ea9fdea4e; uuid="w:e8e0021456144b609cbcbccb9790fe68"; CNZZDATA1259612802=2038699008-1544404633-https%253A%252F%252Fwww.baidu.com%252F%7C1544410033; __tasessionId=1esoq5zf71544425484956'
     }
 
     body = requests.get(url,headers=headers).text
