@@ -31,10 +31,8 @@ def get_content(openid):
     time.sleep(0.1)
 
     return desc
-
-if __name__ == '__main__':
-    db = connect(host='localhost', port=3306, db='spider', user='root', password='secret',charset='utf8')
-    cursor = db.cursor()
+    
+def update_user_desc():
     try:
         sql = """select id,openid,flag,`describe` from jjb_media"""
         cursor.execute(sql)
@@ -63,4 +61,8 @@ if __name__ == '__main__':
         else:
             pass
 
+if __name__ == '__main__':
+    db = connect(host='localhost', port=3306, db='spider', user='root', password='secret',charset='utf8')
+    cursor = db.cursor()
+    
     db.close()
