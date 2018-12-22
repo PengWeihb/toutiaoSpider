@@ -26,7 +26,6 @@ def get_content(openid):
         soup = response.find_all('p',{'id':'description'})[0]
         soup2 = BeautifulSoup(str(soup), 'lxml')
         desc = soup2.get_text()
-        print(desc)
     except:
         desc = '[]'
     time.sleep(0.1)
