@@ -34,7 +34,7 @@ def get_content(openid):
     
 def update_user_desc():
     try:
-        sql = """select id,openid,flag,`describe` from jjb_media"""
+        sql = """select id,uid,flag,`describe` from toutiao_media"""
         cursor.execute(sql)
         data = cursor.fetchall()
         db.commit()
