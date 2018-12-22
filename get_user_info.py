@@ -47,9 +47,8 @@ def update_user_desc():
         desc = data[i][3]
         if flag == '今日头条' and desc == '[]':
             print(id)
-            #uid = data[i][1]
-            #con = get_content(uid)
-            con = ''
+            uid = data[i][1]
+            con = get_content(uid)
             param = [con, id]
             try:
                 sql = """update jjb_media set `describe` = %s where id = %s"""
