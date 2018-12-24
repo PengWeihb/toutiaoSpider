@@ -19,7 +19,6 @@ def get_content(openid):
     }
 
     body = requests.get(url,headers=headers).text
-    time.sleep(0.1)
     response = BeautifulSoup(body,'lxml')
 
     try:
@@ -28,7 +27,6 @@ def get_content(openid):
         desc = soup2.get_text()
     except:
         desc = '[]'
-    time.sleep(0.1)
 
     return desc
     
