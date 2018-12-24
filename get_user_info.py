@@ -44,7 +44,6 @@ def update_user_desc():
         flag = data[i][2]
         desc = data[i][3]
         if flag == '今日头条' and desc == '[]':
-            print(id)
             uid = data[i][1]
             con = get_content(uid)
             param = [con, id]
