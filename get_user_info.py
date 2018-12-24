@@ -49,7 +49,7 @@ def update_user_desc():
             con = get_content(uid)
             param = [con, id]
             try:
-                sql = """update jjb_media set `describe` = %s where id = %s"""
+                sql = """update toutiao_media set `describe` = %s where id = %s"""
                 cursor.execute(sql, param)
                 db.commit()
                 print('ok!!!!!')
