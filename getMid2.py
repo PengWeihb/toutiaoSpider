@@ -26,10 +26,9 @@ def get_content(openid):
         soup = soup[0]
     except:
         soup = 0
-    soup = str(soup)
 
     pattern = re.compile('\d+')
-    soup2 = re.findall(pattern,soup)
+    soup2 = re.findall(pattern,str(soup))
     mid = soup2[0]
 
     return mid
