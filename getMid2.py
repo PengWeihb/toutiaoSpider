@@ -34,11 +34,8 @@ def get_content(openid):
 
     return mid
 
-if __name__ == '__main__':
-    db = connect(host='192.168.0.21',port=3306,db='db_juejinlian',user='user_juejinlian',password='ac21acWq18E2',charset='utf8')
-    cursor = db.cursor()
-
-    try:
+def conn_sql():
+     try:
         sql = """select id,openid,toutiao_mid from jjb_media"""
         cursor.execute(sql)
         data = cursor.fetchall()
@@ -65,5 +62,11 @@ if __name__ == '__main__':
                 db.rollback()
         else:
             pass
+
+if __name__ == '__main__':
+    db = connect(host='192.168.0.21',port=3306,db='db_juejinlian',user='user_juejinlian',password='ac21acWq18E2',charset='utf8')
+    cursor = db.cursor()
+
+   
 
     db.close()
