@@ -67,6 +67,6 @@ if __name__ == '__main__':
     db = connect(host='192.168.0.21',port=3306,db='db_juejinlian',user='user_juejinlian',password='ac21acWq18E2',charset='utf8')
     cursor = db.cursor()
 
-   
-
+    conn_sql()
+    
     db.close()
