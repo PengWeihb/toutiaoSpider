@@ -15,11 +15,9 @@ def get_content(openid):
     }
 
     body = requests.get(url,headers=headers).text
-    time.sleep(0.1)
     response = BeautifulSoup(body,'lxml')
 
     soup = response.find_all('button',{'class':'more'})
-    time.sleep(0.1)
     try:
         soup = soup[0]
     except:
