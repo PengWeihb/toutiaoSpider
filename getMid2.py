@@ -36,7 +36,7 @@ def get_content(openid):
 
 def conn_sql():
      try:
-        sql = """select id,openid,toutiao_mid from jjb_media"""
+        sql = """select id,openid,toutiao_mid from toutiao_media"""
         cursor.execute(sql)
         data = cursor.fetchall()
         db.commit()
@@ -52,7 +52,7 @@ def conn_sql():
             time.sleep(0.2)
             param = [mid,id]
             try:
-                sql = """update jjb_media set toutiao_mid = %s where id = %s"""
+                sql = """update toutiao_media set toutiao_mid = %s where id = %s"""
                 cursor.execute(sql,param)
                 db.commit()
                 print('ok!!!!!')
