@@ -39,31 +39,31 @@ if __name__ == '__main__':
     cursor = db.cursor()
 
     try:
-        sql = """select id,openid,toutiao_mid,falg from jjb_media"""
+        sql = """select id,openid,toutiao_mid from jjb_media"""
         cursor.execute(sql)
         data = cursor.fetchall()
         db.commit()
     except:
         db.rollback()
 
-    for i in range(len(data)):
+
         print(i)
-        flag = data[i][3]
-        if flag == '今日头条':
-            toutiao_mid = data[i][2]
-            if toutiao_mid == '0':
-                id = data[i][0]
-                openid = data[i][1]
-                mid = get_content(openid)
-                mid = str(mid)
-                time.sleep(0.2)
-                param = [mid,id]
-                try:
-                    sql = """update jjb_media set toutiao_mid = %s where id = %s"""
-                    cursor.execute(sql,param)
-                    db.commit()
-                    print('ok!!!!!')
-                except:
-                    db.rollback()
+        toutiao_mid = data[i][2]
+        if toutiao_mid == '0':
+            id = data[i][0]
+            openid = data[i][1]
+            mid = get_content(openid)
+            mid = str(mid)
+            time.sleep(0.2)
+            param = [mid,id]
+            try:
+                sql = """update jjb_media set toutiao_mid = %s where id = %s"""
+                cursor.execute(sql,param)
+                db.commit()
+                print('ok!!!!!')
+            except:
+                db.rollback()
+        else:
+            pass
 
     db.close()
