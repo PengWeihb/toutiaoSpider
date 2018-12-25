@@ -7,6 +7,10 @@ from fake_useragent import UserAgent
 from pymysql import *
 import time
 
+'''
+今日头条号主信息mid抓取,通过H5页面
+'''
+
 def get_content(openid):
     ua = UserAgent()
     url = 'http://m.toutiao.com/profile/' + str(openid) + '/'
