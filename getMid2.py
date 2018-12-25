@@ -27,7 +27,6 @@ def get_content(openid):
     pattern = re.compile('\d+')
     soup2 = re.findall(pattern,soup)
     mid = soup2[0]
-    print(mid)
 
     return mid
 
@@ -40,8 +39,6 @@ def conn_sql():
     except:
         db.rollback()
 
-
-        print(i)
         toutiao_mid = data[i][2]
         if toutiao_mid == '0':
             id = data[i][0]
