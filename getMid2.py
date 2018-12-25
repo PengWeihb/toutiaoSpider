@@ -48,7 +48,6 @@ def conn_sql():
             openid = data[i][1]
             mid = get_content(openid)
             mid = str(mid)
-            time.sleep(0.2)
             param = [mid,id]
             try:
                 sql = """update toutiao_media set toutiao_mid = %s where id = %s"""
