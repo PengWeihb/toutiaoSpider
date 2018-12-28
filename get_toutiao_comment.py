@@ -75,7 +75,6 @@ class Comment(object):
                     print('insert item success！！！')
             except Exception as e:
                 print('insert item wrong', e)
-            print('something is wrong!!!')
             self.redis_cli.srem("IP", ip)
 
     def parse_comment(self,comments,item_id,group_id,total_number):
