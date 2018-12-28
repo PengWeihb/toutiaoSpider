@@ -101,9 +101,6 @@ class Comment(object):
             #评论回复数
             reply_count = comment['comment']['reply_count']
 
-            print('text: ', text)
-            print('total_number: ', total_number)
-
             #获取回复comment
             reply_list = []
             if reply_count > 0:
