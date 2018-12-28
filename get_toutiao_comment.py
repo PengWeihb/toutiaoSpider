@@ -22,7 +22,7 @@ class Comment(object):
     def __init__(self):
         self.offset = 0
         self.count = 2 #IP失效次数(）
-        self.redis_cli = redis.Redis(host='localhost', port=6379, db=0, password='secret', charset='utf8', decode_responses=True)
+        self.redis_cli = redis.Redis(host='secret', port=6379, db=0, password='secret', charset='utf8', decode_responses=True)
 
     def get_comment(self, item_id, group_id, save_time):
         ua = UserAgent()
@@ -124,8 +124,8 @@ class Comment(object):
             try:
                 url = 'http://secret/spider/toutiao_comment'
                 requests.post(url, data=items)
-                jjb_url = 'http://secret/spider/toutiao_comment'
-                requests.post(jjb_url, data=items)
+                cm_url = 'http://secret/spider/toutiao_comment'
+                requests.post(cm_url, data=items)
                 print('ok!!!!')
             except Exception as e:
                 print('insert db wrong!!!!', e)
@@ -196,8 +196,6 @@ class Comment(object):
                 }
             except:
                 reply_to_comment = {}
-
-            print('reply_text: ', text)
 
             items = {
                 'nickname': user_name,
