@@ -222,8 +222,7 @@ class Comment(object):
 
     def run(self):
         while True:
-            data = self.redis_cli.spop('spider_toutiao_comment_zero_id')
-            print(type(data), data)
+            data = self.redis_cli.spop('spider_toutiao_comment_id')
             if data == None:
                 time.sleep(600)
                 print('data is None')
