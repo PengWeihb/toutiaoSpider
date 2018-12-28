@@ -55,7 +55,7 @@ class Comment(object):
             total_number = response.json()['total_number']
             data = response.json()['data']
             time.sleep(random.randint(1, 2) / 32)
-            print('data: ', data)
+     
             if data == []:
                 now = int(time.time())
                 space_time = now - save_time
