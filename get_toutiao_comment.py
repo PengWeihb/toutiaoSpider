@@ -11,6 +11,10 @@ import hashlib
 from fake_useragent import UserAgent
 import random
 
+'''
+今日头条文章评论内容抓取，抓取一级评论及二级回复评论
+'''
+
 #设置递归深度
 sys.setrecursionlimit(100000)
 
