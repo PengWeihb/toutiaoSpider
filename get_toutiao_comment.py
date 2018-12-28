@@ -22,7 +22,7 @@ class Comment(object):
     def __init__(self):
         self.offset = 0
         self.count = 2 #IP失效次数(）
-        self.redis_cli = redis.Redis(host='127.0.0.1', port=6379, db=0, password='123456', charset='utf8', decode_responses=True)
+        self.redis_cli = redis.Redis(host='localhost', port=6379, db=0, password='secret', charset='utf8', decode_responses=True)
 
     def get_comment(self, item_id, group_id, save_time):
         ua = UserAgent()
