@@ -125,9 +125,9 @@ class Comment(object):
 
             # 文章评论信息存储
             try:
-                url = 'http://dev.api.juejinchain.cn/index/spider/toutiao_comment'
+                url = 'http://secret/spider/toutiao_comment'
                 requests.post(url, data=items)
-                jjb_url = 'http://api.juejinchain.com/index/spider/toutiao_comment'
+                jjb_url = 'http://secret/spider/toutiao_comment'
                 requests.post(jjb_url, data=items)
                 print('ok!!!!')
             except Exception as e:
