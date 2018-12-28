@@ -158,7 +158,6 @@ class Comment(object):
             reply_url = 'http://lf-hl.snssdk.com/2/comment/v3/reply_list/?' + urlencode(param_data)
             response = requests.get(reply_url, headers=headers,timeout=3)
             soup = response.json()
-            print(soup)
             self.parse_reply_comment(soup,id,reply_list,offset_reply)
         except Exception as e:
             print('reply_comment is wrong', e)
@@ -215,7 +214,6 @@ class Comment(object):
 
         else:
             if has_more:
-                print('111111')
                 offset_reply += 50
                 self.get_reply_comment(id,reply_list, offset_reply)
 
